@@ -3,10 +3,16 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
-    "start": "next start"
+    "start": "next start",
+    "local-pds": "node ./scripts/local-pds.js",
+    "copy-tars-from-pds-mac": "cp -r ../../../lit-components-lib/tgz-packages/. ./",
+    "clean-mac": "rm -rf package-lock.json && rm -rf keisha-design-system-*.tgz && rm -rf node_modules/@keisha && rm -rf .next",
+    "install-local-pds": "npm run clean-mac && npm run copy-tars-from-pds-mac && npm run local-pds && npm i"
   },
   "dependencies": {
+    "@lit-labs/nextjs": "^0.1.4",
     "date-fns": "^2.29.3",
+    "edit-json-file": "^1.7.0",
     "gray-matter": "^4.0.3",
     "next": "latest",
     "react": "18.2.0",
